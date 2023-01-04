@@ -1,0 +1,14 @@
+<div class="entrance">
+    <% var cardTitle = (entrance_type === "I") ? "Inicia sesión" : "Regístrate" %> 
+    <%- partial('../partials/entrance-header.ejs', {entrance_type: entrance_type}) %> 
+    <div class="form-card container-fluid bg-light shadow-sm p-0">
+        <div class="bg-dark text-light text-start ps-3 py2 lead fs-1"><%= cardTitle %> </div>
+        <form class="mx-5" action="" method="POST" >
+            <% if (entrance_type === "I") { %>
+                <%- partial('../partials/login.ejs', {errors: errors}) %> 
+            <% } else { %>
+                <%- partial('../partials/register.ejs', {errors: errors}) %>
+            <% } %>
+        </form>
+    </div>
+</div>
