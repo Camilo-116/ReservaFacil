@@ -13,7 +13,7 @@ module.exports = {
     //  ╠═╝╠╦╝║║║║║ ║ ║╚╗╔╝║╣ ╚═╗
     //  ╩  ╩╚═╩╩ ╩╩ ╩ ╩ ╚╝ ╚═╝╚═╝
 
-    id: { type: 'number', autoIncrement: true, required: true, unique: true },
+    id: { type: 'number', autoIncrement: true, unique: true },
 
     nombre: { type: 'string', required: true },
 

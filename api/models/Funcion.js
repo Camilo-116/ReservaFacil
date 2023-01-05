@@ -14,7 +14,7 @@ module.exports = {
     //  ╠═╝╠╦╝║║║║║ ║ ║╚╗╔╝║╣ ╚═╗
     //  ╩  ╩╚═╩╩ ╩╩ ╩ ╩ ╚╝ ╚═╝╚═╝
 
-    id: { type: 'number', autoIncrement: true, required: true, unique: true },
+    id: { type: 'number', autoIncrement: true, unique: true },
 
     tickets_disponibles: { type: 'number', required: true },
 

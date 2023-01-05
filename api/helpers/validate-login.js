@@ -10,13 +10,11 @@ module.exports = {
   inputs: {
     username: {
       type: 'string',
-      description: 'Nombre de usuario',
-      required: true
+      description: 'Nombre de usuario'
     },
     password: {
       type: 'string',
-      description: 'Contraseña',
-      required: true
+      description: 'Contraseña'
     }
   },
 
@@ -42,16 +40,30 @@ module.exports = {
       message: ''
     };
 
-    var user = await Usuario.findOne({username: inputs.username});
+    var user;
+    if (inputs.username && inputs.password) {
+      user = await Usuario.findOne({ username: inputs.username });
 
-    if (!user) {
-      uError.isError = true;
-      uError.message = 'El usuario no existe';
-      hasError = true;
-    }else{
-      if (user.password !== inputs.password) {
+      if (!user) {
+        uError.isError = true;
+        uError.message = 'El usuario no existe';
+        hasError = true;
+      } else {
+        if (user.password !== inputs.password) {
+          pError.isError = true;
+          pError.message = 'Contraseña incorrecta';
+          hasError = true;
+        }
+      }
+    } else {
+      if (!inputs.username) {
+        uError.isError = true;
+        uError.message = 'El nombre de usuario es requerido';
+        hasError = true;
+      }
+      if (!inputs.password) {
         pError.isError = true;
-        pError.message = 'Contraseña incorrecta';
+        pError.message = 'La contraseña es requerida';
         hasError = true;
       }
     }

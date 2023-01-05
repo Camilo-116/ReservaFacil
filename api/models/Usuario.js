@@ -14,17 +14,17 @@ module.exports = {
     //  ╠═╝╠╦╝║║║║║ ║ ║╚╗╔╝║╣ ╚═╗
     //  ╩  ╩╚═╩╩ ╩╩ ╩ ╩ ╚╝ ╚═╝╚═╝
 
-    id: { type: 'number', required: true, unique: true },
+    id: { type: 'number', autoIncrement: true, unique: true },
 
     username: { type: 'string', required: true, unique: true },
 
-    email: { type: 'string', unique: true },
+    email: { type: 'string', unique: true, allowNull: true },
 
     password: { type: 'string', required: true },
 
     tipo_usuario: { type: 'string', required: true },
 
-    telefono: { type: 'number', required: true },
+    telefono: { type: 'number', allowNull: true },
 
     //  ╔═╗╔╦╗╔╗ ╔═╗╔╦╗╔═╗
     //  ║╣ ║║║╠╩╗║╣  ║║╚═╗

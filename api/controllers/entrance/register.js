@@ -1,3 +1,4 @@
+/* eslint-disable camelcase */
 module.exports = {
 
 
@@ -48,7 +49,15 @@ module.exports = {
     var [errors, hasError] = await sails.helpers.validateNewUser(inputs.username, inputs.password, inputs.passwordC, inputs.email, inputs.phone);
 
     if (hasError) {
-      return exits.unSuccesful({entranceType: 'R', errors: errors});
+      return exits.unSuccesful({ entranceType: 'R', errors: errors });
+    } else {
+      await Usuario.create({
+        username: inputs.username,
+        password: inputs.password,
+        email: inputs.email,
+        phone: inputs.phone,
+        tipo_usuario: 'espectador'
+      });
     }
 
     // All done.
