@@ -7,11 +7,11 @@
 </div>
 <div class="form-group <%= errors.password.isError ? "has-danger" : "" %>">
     <label class="form-label mt-4" for="password">Contraseña</label>
-    <input type="text" class="form-control <%= errors.password.isError ? "is-invalid" : "" %>" id="password" nombre="password" placeholder="Introduce tu contraseña...">
+    <input type="password" class="form-control <%= errors.password.isError ? "is-invalid" : "" %>" id="password" nombre="password" placeholder="Introduce tu contraseña...">
     <% if (errors.password.isError) { %>
         <div class="invalid-feedback"><%= errors.password.message %> </div>
     <% } %>
 </div>
-<div class="form-group mt-3 mb-4">
-    <button type="submit" class="btn btn-primary">Iniciar sesión</button>
+<div class="fs-6 mt-1">
+    No tienes una cuenta? Crea una <a href="/entrance/R">Aquí</a>
 </div>

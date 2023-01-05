@@ -19,4 +19,10 @@ module.exports.policies = {
 
   // '*': true,
 
+  'view-home-espectador': 'isLoggedIn',
+
+  // 'view-home-admin': 'isAdmin',
+
+  'entrance/login': 'alreadyLoggedIn',
+
 };

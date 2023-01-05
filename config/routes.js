@@ -21,6 +21,12 @@ module.exports.routes = {
 
   'GET /': { action: 'view-home-espectador' },
 
+  'GET /entrance/:entranceType': { action: 'view-entrance' },
+
+  'POST /login': { action: 'entrance/login' },
+
+  'POST /register': { action: 'entrance/register' },
+
 
   /***************************************************************************
   *                                                                          *

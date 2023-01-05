@@ -6,8 +6,17 @@ module.exports = {
 
   description: 'Display "Entrance" page.',
 
+  inputs: {
+    entranceType: {
+      type: 'string',
+      isIn: ['R', 'L'],
+      description: 'The type of entrance: R for register, L for login',
+      required: true
+    },
+  },
 
   exits: {
+
 
     success: {
       viewTemplatePath: 'pages/entrance'
@@ -16,7 +25,7 @@ module.exports = {
   },
 
 
-  fn: async function () {
+  fn: async function (inputs) {
 
     var usernameError = {
       isError: false,
@@ -39,16 +48,19 @@ module.exports = {
       message: ''
     };
 
+    var errors = {
+      username: usernameError,
+      password: passwordError,
+      passwordC: passwordCError,
+      email: emailError,
+      phone: phoneError
+    };
+
+
     // Respond with view.
     return {
-      entrance_type: 'R',
-      errors: {
-        username: usernameError,
-        password: passwordError,
-        passwordC: passwordCError,
-        email: emailError,
-        phone: phoneError
-      }
+      entranceType: inputs.entranceType,
+      errors: errors
     };
 
   }

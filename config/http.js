@@ -29,16 +29,17 @@ module.exports.http = {
     *                                                                          *
     ***************************************************************************/
 
-    // order: [
-    //   'cookieParser',
-    //   'session',
-    //   'bodyParser',
-    //   'compress',
-    //   'poweredBy',
-    //   'router',
-    //   'www',
-    //   'favicon',
-    // ],
+    order: [
+      'cookieParser',
+      'session',
+      'bodyParser',
+      'compress',
+      'poweredBy',
+      // 'verifySession',
+      'router',
+      'www',
+      'favicon',
+    ],
 
 
     /***************************************************************************
@@ -54,6 +55,16 @@ module.exports.http = {
     //   var middlewareFn = skipper({ strict: true });
     //   return middlewareFn;
     // })(),
+
+    // verifySession: (function _verifySession() {
+    //   return (req, res, next) =>{
+    //     if(req.session.username) {
+    //       return next();
+    //     } else {
+    //       return res.redirect('/entrance/L', {unauthorized: true}});
+    //     }
+    //   };
+    // })()
 
   },
 
