@@ -43,13 +43,12 @@ module.exports = {
 
   fn: async function (inputs, exits) {
 
-    console.log(`inputs: ${JSON.stringify(inputs)}`);
 
-    // var [errors, hasError] = await sails.helpers.validateNewUser(inputs);
+    var [errors, hasError] = await sails.helpers.validateNewUser(inputs.username, inputs.password, inputs.passwordC, inputs.email, inputs.phone);
 
-    // if (hasError) {
-    //   return exits.unSuccesful({entranceType: 'R', errors: errors});
-    // }
+    if (hasError) {
+      return exits.unSuccesful({entranceType: 'R', errors: errors});
+    }
 
     // All done.
     return exits.success('/');

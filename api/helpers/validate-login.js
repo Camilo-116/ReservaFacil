@@ -53,11 +53,6 @@ module.exports = {
         pError.isError = true;
         pError.message = 'Contraseña incorrecta';
         hasError = true;
-      }else{
-        this.req.session.username = user.username;
-        this.req.session.role = user.tipo_usuario;
-        this.req.session.email = user.email;
-        this.req.session.phone = user.phone;
       }
     }
 
@@ -66,7 +61,7 @@ module.exports = {
       password: pError
     };
 
-    return exits.success([errors, hasError]);
+    return exits.success([errors, hasError, user]);
 
   }
 

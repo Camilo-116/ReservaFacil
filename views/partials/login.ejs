@@ -1,13 +1,13 @@
 <div class="form-group <%= errors.username.isError ? "has-danger" : "" %>">
     <label class="form-label mt-4" for="username">Nombre de usuario</label>
-    <input type="text" class="form-control <%= errors.username.isError ? "is-invalid" : "" %>" id="username" nombre="username" placeholder="Introduce tu nombre de usuario...">
+    <input type="text" class="form-control <%= errors.username.isError ? "is-invalid" : "" %>" id="username" name="username" placeholder="Introduce tu nombre de usuario...">
     <% if (errors.username.isError) { %>
         <div class="invalid-feedback"><%= errors.username.message %> </div>
     <% } %>
 </div>
 <div class="form-group <%= errors.password.isError ? "has-danger" : "" %>">
     <label class="form-label mt-4" for="password">Contraseña</label>
-    <input type="password" class="form-control <%= errors.password.isError ? "is-invalid" : "" %>" id="password" nombre="password" placeholder="Introduce tu contraseña...">
+    <input type="password" class="form-control <%= errors.password.isError ? "is-invalid" : "" %>" id="password" name="password" placeholder="Introduce tu contraseña...">
     <% if (errors.password.isError) { %>
         <div class="invalid-feedback"><%= errors.password.message %> </div>
     <% } %>
