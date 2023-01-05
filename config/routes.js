@@ -27,6 +27,8 @@ module.exports.routes = {
 
   'POST /register': { action: 'entrance/register' },
 
+  'GET /logout': { action: 'entrance/logout' },
+
 
   /***************************************************************************
   *                                                                          *

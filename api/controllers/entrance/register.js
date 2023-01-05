@@ -4,7 +4,7 @@ module.exports = {
   friendlyName: 'Register',
 
 
-  description: 'Register entrance.',
+  description: 'Registro de nuevo usuario.',
 
 
   inputs: {
@@ -34,6 +34,7 @@ module.exports = {
   exits: {
     success: {
       responseType: 'redirect',
+      statusCode: 201
     },
     unSuccesful: {
       viewTemplatePath: 'pages/entrance'

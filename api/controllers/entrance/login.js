@@ -4,7 +4,7 @@ module.exports = {
   friendlyName: 'Login',
 
 
-  description: 'Login something.',
+  description: 'Inicio de sesión de usuario.',
 
 
   inputs: {
