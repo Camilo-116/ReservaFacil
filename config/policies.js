@@ -21,8 +21,8 @@ module.exports.policies = {
 
   'view-home-espectador': 'isLoggedIn',
 
-  // 'view-home-admin': 'isAdmin',
+  'view-home-admin': 'isAdmin',
 
-  'entrance/login': 'alreadyLoggedIn',
+  'view-entrance': 'alreadyLoggedIn',
 
 };

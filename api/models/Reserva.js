@@ -18,6 +18,8 @@ module.exports = {
 
     estado_confirmacion: { type: 'string', required: true },
 
+    asientos: { type: 'string', required: true },
+
     //  ╔═╗╔╦╗╔╗ ╔═╗╔╦╗╔═╗
     //  ║╣ ║║║╠╩╗║╣  ║║╚═╗
     //  ╚═╝╩ ╩╚═╝╚═╝═╩╝╚═╝

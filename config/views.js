@@ -36,6 +36,10 @@ module.exports.views = {
   *                                                                          *
   ***************************************************************************/
 
-  layout: 'layouts/layout'
+  layout: 'layouts/layout',
+
+  locals: {
+    pageTitle: 'Reserva Fácil'
+  }
 
 };

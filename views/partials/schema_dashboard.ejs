@@ -1,0 +1,44 @@
+<div class="schema-table">
+  <div class="lead fw-bold"><%= tabla.nombreTabla %></div>
+  <table class="table table-hover">
+    <thead class="table-info">
+      <tr>
+        <% for( let i = 0; i < tabla.columnas.length; i++ ) { %>
+        <th class="text-center" scope="col"><%= tabla.columnas[i] %></th>
+        <% } %> <% if (tabla.nombreTabla === 'Eventos' || tabla.nombreTabla ===
+        'Funciones') { %>
+        <th class="text-center col-3" scope="col">Acciones</th>
+        <% } %>
+      </tr>
+    </thead>
+    <tbody>
+      <% for( let i = 0; i < tabla.registros.length; i++ ) { %>
+      <tr>
+        <% for( let j = 0; j < tabla.columnas.length; j++ ) { %>
+        <td class="text-center">
+          <%= tabla.registros[i][tabla.columnas[j]] %>
+        </td>
+        <% } %> <% if (tabla.nombreTabla === 'Eventos' || tabla.nombreTabla ===
+        'Funciones') { %>
+        <td class="text-center">
+          <% if (tabla.nombreTabla === 'Eventos') { %>
+          <form class="d-inline-block" action= <%= `/update/${tabla.nombreTabla}/${tabla.registros[i].id}` %> method="GET" >
+            <button type="submit" class="btn btn-primary">Editar</button>
+          </form>
+          <% } %>
+          <form class="d-inline-block" action= <%= `/delete/${tabla.nombreTabla}/${tabla.registros[i].id}` %> method="POST" >
+            <button type="submit" class="btn btn-danger">Eliminar</button>
+          </form>
+        </td>
+        <% } %>
+      </tr>
+      <% } %> <% if (tabla.registros.length === 0) { %>
+      <tr>
+        <td class="text-center" colspan="<%= tabla.columnas.length + 1 %>">
+          No hay registros
+        </td>
+      </tr>
+      <% } %>
+    </tbody>
+  </table>
+</div>

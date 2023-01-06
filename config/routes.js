@@ -29,6 +29,12 @@ module.exports.routes = {
 
   'GET /logout': { action: 'entrance/logout' },
 
+  'GET /admin': { action: 'view-home-admin' },
+
+  'POST /delete/:table/:id': { action: 'admin/delete' },
+
+  'GET /update/:table/:id': { action: 'view-update' },
+
 
   /***************************************************************************
   *                                                                          *

@@ -43,7 +43,7 @@ module.exports = {
     }
 
     // All done.
-    return exits.success('/');
+    return (user.tipo_usuario === 'espectador') ? exits.success('/') : exits.success('/admin');
 
   }
 

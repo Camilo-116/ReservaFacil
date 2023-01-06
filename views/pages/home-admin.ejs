@@ -1,0 +1,12 @@
+<div id="admin" v-cloak>
+
+  <%- partial('../partials/admin-header.ejs') %> 
+
+  <div class="schema-control bg-light shadow px-4 py-3" >
+    <% for( let i = 0; i < tablas.length; i++ ) { %>
+    <%- partial('../partials/schema_dashboard.ejs', { tabla: tablas[i]}) %> 
+    <% } %>
+  </div>
+
+</div>
+<%- /* Expose server-rendered data as window.SAILS_LOCALS :: */ exposeLocalsToBrowser() %>

@@ -18,6 +18,8 @@ module.exports = {
 
     tickets_disponibles: { type: 'number', required: true },
 
+    fecha: { type: 'ref', columnType: 'date', required: true },
+
     hora: { type: 'ref', columnType: 'time', required: true },
 
     //  ╔═╗╔╦╗╔╗ ╔═╗╔╦╗╔═╗
